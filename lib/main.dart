@@ -1,16 +1,15 @@
-
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart'; // Importe o firebase_core
-import 'package:myapp/home_page.dart';
-import 'package:myapp/new_movie.dart';
-import 'firebase_options.dart'; // Importe o arquivo de configuração do Firebase
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:myapp/home_page.dart'; // Essa deve conter a classe HomePage
+import 'package:myapp/domino_game_page.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // Garante que o Flutter esteja inicializado
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform, // Inicializa o Firebase
+    options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp()); // Inicia o aplicativo
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -25,8 +24,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.purpleAccent),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: ''),
-      routes: {"/new": (context) => const NewMoviePage()},
+      home: const HomePage(), // ✅ Essa é sua tela inicial
+      routes: {
+        "/domino": (context) => const DominoGamePage(), // ✅ rota para o jogo
+      },
     );
   }
 }

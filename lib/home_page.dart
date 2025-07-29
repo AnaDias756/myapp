@@ -1,61 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:vertical_card_pager/vertical_card_pager.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required String title});
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  final List<String> titles = ["", "", ""];
-
-  final List<Widget> images = [
-    Container(color: Colors.red),
-    Container(color: Colors.yellow),
-    ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
-      child: const Icon(Icons.add_box_rounded, color: Colors.blue, size: 100.0),
-    ),
-  ];
-  
-  get onPressed => null;
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Ana'),
-        centerTitle: true,
-        actions: [
-          IconButton(onPressed: onPressed, icon: const Icon(Icons.refresh))
-        ]
+        title: const Text('Meu App'),
       ),
-      body: SafeArea(
+      body: Center(
         child: Column(
-          children: <Widget>[
-            Expanded(
-              child: VerticalCardPager(
-                titles: titles, // required
-                images: images, // required
-                textStyle: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ), // optional
-                onSelectedItem: onSelectedItem,
-                initialPage: 0, // optional
-              ),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Bem-vindo ao Meu App!'),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/domino"); // rota correta
+              },
+              child: const Text('Jogar Dominó'),
             ),
           ],
         ),
       ),
     );
-  }
-
-  void onSelectedItem(int index) {
-    if (index == titles.length - 1) {
-      Navigator.pushNamed(context, "/new");
-    }
   }
 }
