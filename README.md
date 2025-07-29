@@ -1,57 +1,41 @@
-# myapp
+# Jogo de Dominó
 
-A new Flutter project.
+Aplicativo simples desenvolvido em Flutter que simula uma partida de dominó contra um bot.
+O jogo distribui as peças automaticamente e permite que o usuário jogue tocando nas peças disponíveis.
 
-## Getting Started
+## Funcionalidades
+- Distribuição aleatória de peças para o jogador, o bot e o monte.
+- Mesa dinâmica com validação das jogadas.
+- Bot executa jogadas automáticas após o usuário.
+- Tela inicial com botão para iniciar o jogo.
+- Integração básica com Firebase já configurada (podendo ser usada para registrar pontuações).
 
-This project is a starting point for a Flutter application.
+## Pré-requisitos
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) instalado na máquina
+- Dispositivo ou emulador configurado
+- Opcional: [FlutterFire CLI](https://firebase.flutter.dev/docs/cli/) para configurar o Firebase
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-## Prerequisites
-
-- [Flutter SDK](https://docs.flutter.dev/get-started/install) installed on your machine
-- A configured device or emulator to run the app
-
-## Install Dependencies
-
-Run the following command to fetch the project dependencies:
-
+## Instalando dependências
+Execute:
 ```bash
 flutter pub get
 ```
 
-## Run the App
-
-To launch the application on an available device or emulator:
-
+## Executando o aplicativo
+Inicie o app em um dispositivo ou emulador disponível com:
 ```bash
 flutter run
 ```
 
-## Execute Tests
-
-Run the Flutter test suite with:
-
+## Testes
+Os testes podem ser executados com:
 ```bash
 flutter test
 ```
 
-## Firebase Setup
-
-This project uses Firebase. If you haven't configured it yet, install the
-[FlutterFire CLI](https://firebase.flutter.dev/docs/cli/) and run:
-
+## Configuração do Firebase
+Caso deseje registrar pontuações ou outras informações na nuvem, utilize o FlutterFire CLI para configurar o projeto:
 ```bash
 flutterfire configure
 ```
-
-After configuration, make sure the generated files such as
-`firebase_options.dart` are committed to the project.
+Isso irá gerar arquivos como `firebase_options.dart`, que devem ser mantidos no controle de versão.
